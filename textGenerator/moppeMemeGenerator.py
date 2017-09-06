@@ -6,7 +6,7 @@ import traceback
 random.seed()
 
 counter = 0 
-argfile = 'moppeMemes'
+argfile = 'moppeMemes.txt'
     
 with open(argfile) as f:
 	text = f.read()
