@@ -1,4 +1,4 @@
-import tweepy, time, sys
+import time, sys
 import random
 import markovify
 import traceback
@@ -14,8 +14,8 @@ with open(argfile) as f:
 	text_model = markovify.Text(text)
 
 while counter < 100:  
-    tweet = text_model.make_short_sentence(140)
-    print(tweet)
+    text = text_model.make_short_sentence(140)
+    print(text)
     counter += 1
 
 
