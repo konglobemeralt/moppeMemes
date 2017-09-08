@@ -20,26 +20,27 @@ with open(argfile) as f:
         # Build the model.
 	text_model = markovify.Text(text)
 
-img = Image.open("images/meme1.jpg")
-draw = ImageDraw.Draw(img)
-
-font = ImageFont.truetype("Fonts/HelveticaBold.ttf", 90)
-
-widthImg, heightImg = img.size
 
 
 for i in range(0, 1000):
+    img = Image.open("images/meme1.jpg")
+    draw = ImageDraw.Draw(img)
+
+    font = ImageFont.truetype("Fonts/unicode.impact.ttf", 90)
+
+    widthImg, heightImg = img.size
+
     try:
-        text1 = text_model.make_short_sentence(60).rstrip()
+        text1 = text_model.make_short_sentence(40).rstrip()
     except AttributeError:
         print "..."
     try:
-        text2 = text_model.make_short_sentence(60).rstrip()
+        text2 = text_model.make_short_sentence(40).rstrip()
     except AttributeError:
         print "..."
         
     margin = offset = widthImg* 0.05
-    for line in textwrap.wrap(text1.upper(), width=19):
+    for line in textwrap.wrap(text1.upper(), width=22):
         try:
             draw.text((margin, offset), line, font=font, fill="#ffffff")
         except TypeError:
@@ -48,7 +49,7 @@ for i in range(0, 1000):
 
     margin = widthImg* 0.05
     offset = heightImg * 0.80
-    for line in textwrap.wrap(text2.upper(), width=19):
+    for line in textwrap.wrap(text2.upper(), width=22):
         try:
             draw.text((margin, offset), line, font=font, fill="#ffffff")
         except TypeError:
