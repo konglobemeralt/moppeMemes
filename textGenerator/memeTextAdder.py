@@ -14,7 +14,7 @@ random.seed()
 
 counter = 0 
 argfile = 'redditMoppeMemesCombined.txt'
-    
+
 with open(argfile) as f:
 	text = f.read()
         # Build the model.
@@ -31,16 +31,16 @@ for i in range(0, 1000):
     widthImg, heightImg = img.size
 
     try:
-        text1 = text_model.make_short_sentence(40).rstrip()
+        text1 = text_model.make_short_sentence(60).rstrip().decode("utf-8")
     except AttributeError:
         print "..."
     try:
-        text2 = text_model.make_short_sentence(40).rstrip()
+        text2 = text_model.make_short_sentence(60).rstrip().decode("utf-8")
     except AttributeError:
         print "..."
         
     margin = offset = widthImg* 0.05
-    for line in textwrap.wrap(text1.upper(), width=22):
+    for line in textwrap.wrap(text1.upper(), width=26):
         try:
             draw.text((margin, offset), line, font=font, fill="#ffffff")
         except TypeError:
@@ -49,7 +49,7 @@ for i in range(0, 1000):
 
     margin = widthImg* 0.05
     offset = heightImg * 0.80
-    for line in textwrap.wrap(text2.upper(), width=22):
+    for line in textwrap.wrap(text2.upper(), width=26):
         try:
             draw.text((margin, offset), line, font=font, fill="#ffffff")
         except TypeError:
