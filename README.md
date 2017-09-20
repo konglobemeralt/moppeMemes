@@ -4,6 +4,9 @@
   
   -Ian Malcom, Jurassic Park
   
+  
+Crawl the web for moped related text strings, preferably in norwegian. Use these to create an infinite number of memes. 
+  
   ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
