@@ -33,18 +33,18 @@ for i in range(0, 1000):
     try:
         text1 = text_model.make_short_sentence(60).rstrip().decode("utf-8")
     except AttributeError:
-        print "..."
+        print "unable to make short top sentence"
     try:
         text2 = text_model.make_short_sentence(60).rstrip().decode("utf-8")
     except AttributeError:
-        print "..."
+        print "unable to make short bottom sentence"
         
     margin = offset = widthImg* 0.05
     for line in textwrap.wrap(text1.upper(), width=26):
         try:
             draw.text((margin, offset), line, font=font, fill="#ffffff")
         except TypeError:
-            print "Some error, ignoring line"
+            print "Margin error, ignoring line"
         offset += font.getsize(line)[1]
 
     margin = widthImg* 0.05
@@ -53,7 +53,7 @@ for i in range(0, 1000):
         try:
             draw.text((margin, offset), line, font=font, fill="#ffffff")
         except TypeError:
-            print "Some error, ignoring line"
+            print "Draw Text error, ignoring line"
         offset += font.getsize(line)[1]
 
 
@@ -62,4 +62,4 @@ for i in range(0, 1000):
 
 
     img.save("GeneratedMemes/dankMoppeMemeGenerated" + str(i) + ".jpg")
-
+    print("Done with: " + str(i))
