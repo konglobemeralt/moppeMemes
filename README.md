@@ -5,7 +5,7 @@
   -Ian Malcom, Jurassic Park
   
   
-Crawl the web for moped related text strings, preferably in norwegian. Use these to create an infinite number of memes. 
+Crawl the web for moped related text strings, preferably in norwegian. Use these to create an infinite number of moped related memes. 
   
   ## License
 
